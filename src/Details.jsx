@@ -17,8 +17,8 @@ const Details = () => {
 
   if (results.isLoading) {
     return (
-      <div className="loading-pane">
-        <h2 className="loader">🌀</h2>
+      <div className="flex items-center justify-center p-4">
+        <h2 className="text-6xl animate-spin">🌀</h2>
       </div>
     );
   }
@@ -29,16 +29,27 @@ const Details = () => {
     <div className="details">
       <Carousel images={pet.images} />
       <div>
-        <h1>{pet.name}</h1>
-        <h2>{`${pet.animal} — ${pet.breed} — ${pet.city}, ${pet.state}`}</h2>
-        <button onClick={() => setShowModal(true)}>Adopt {pet.name}</button>
-        <p>{pet.description}</p>
+        <h1 className="text-center text-6xl text-gray-800 mb-2">{pet.name}</h1>
+        <h2 className="text-center mb-6">{`${pet.animal} — ${pet.breed} — ${pet.city}, ${pet.state}`}</h2>
+        <button
+          className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded"
+          onClick={() => {
+            setShowModal(true);
+            window.scrollTo(0, 0);
+          }}
+        >
+          Adopt {pet.name}
+        </button>
+        <p className="leading-6 px-4">{pet.description}</p>
         {showModal ? (
           <Modal>
             <div>
-              <h1>Would you like to adopt {pet.name}?</h1>
-              <div className="buttons">
+              <h1 className="text-center text-4xl mb-4">
+                Would you like to adopt {pet.name}?
+              </h1>
+              <div className="flex justify-center">
                 <button
+                  className="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded mr-2"
                   onClick={() => {
                     setAdoptedPet(pet);
                     navigate("/");
@@ -46,7 +57,12 @@ const Details = () => {
                 >
                   Yes
                 </button>
-                <button onClick={() => setShowModal(false)}>No</button>
+                <button
+                  className="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded"
+                  onClick={() => setShowModal(false)}
+                >
+                  No
+                </button>
               </div>
             </div>
           </Modal>

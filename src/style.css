@@ -22,3 +22,37 @@
     }
   }
 }
+
+
+/* * {
+  box-sizing: border-box;
+  color: #333;
+}
+
+body {
+  background-color: #81a69b;
+  background-image: url(http://pets-images.dev-apis.com/pets/wallpaperB.jpg);
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+header>a,
+#root>div>h1 {
+  @apply inline-block;
+  background-image: url(http://static.frontendmasters.com/resources/2019-05-02-complete-intro-react-v5/image-logo.png);
+  filter: brightness(150%);
+  width: 279px;
+  height: 76px;
+  overflow: hidden;
+  text-indent: -9999px;
+  margin: 20px 0;
+}
+
+header a {
+  @apply text-sm;
+  color: #333;
+  text-decoration: none;
+  font-weight: bold;
+  display: block;
+  padding-bottom: 10px;
+} */
